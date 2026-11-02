@@ -1,0 +1,21 @@
+services:
+  whatsapp-worker:
+    build: ./whatsapp-worker
+    init: true
+    restart: unless-stopped
+    environment:
+      API_TOKEN: ${API_TOKEN:?Defina API_TOKEN no ambiente ou no arquivo .env da raiz}
+      LOG_LEVEL: info
+    ports:
+      - "127.0.0.1:3001:3001"
+    volumes:
+      - whatsapp-data:/app/data
+    stop_grace_period: 40s
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "3"
+
+volumes:
+  whatsapp-data:

@@ -1,0 +1,36 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+data/
+*.log
+logs/
+coverage/
+
+# IDEs e artefatos locais em qualquer módulo
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+target/
+out/
+build/
+*.class
+
+# Sessões, backups e arquivos privados
+auth/
+auth_info_baileys/
+baileys_auth_info/
+*.dump
+*.backup
+*.bak
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.log.*
+.DS_Store
+Thumbs.db
